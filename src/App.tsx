@@ -48,25 +48,34 @@ function App() {
       title: "Go-Care",
       description:
         "Go Care your all-in-one solution for beauty and hair care. Say goodbye to long queues and searching for available salons. With Go Care, finding the perfect beauty artist or barber is effortless, all from the comfort of your home",
-      image: "src/assets/images/go-care.webp",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWKEdU9GcIaQILX3SnwRPHLWXaubrhFH0Mrg&s",
       technologies: ["Flutter", "Firebase", "State Management"],
       source: "adwat",
+      playStoreLink:
+        "https://play.google.com/store/apps/details?id=com.adwat.gocare",
     },
     {
       title: "Go-Care Businees",
       description:
         "Are you struggling to maintain bookings and efficiency in your beauty center or salon? Look no further than Go Care, the all-in-one application designed to streamline your daily operations and attract more clients. With its specialized control panel, Go Care simplifies the management of your beauty or barber center, salon, or spa, providing essential features tailored to your business needs.",
-      image: "src/assets/images/go-business.webp",
+      image:
+        "https://play-lh.googleusercontent.com/VxNZjxCZTbZ18Ikv9LzmXTX2bZsDtH9ZewNmk1voEA1zP1jpsarkOGG6QB3G951MbDo=w240-h480-rw",
       technologies: ["Flutter", "REST API", "Provider"],
       source: "adwat",
+      playStoreLink:
+        "https://play.google.com/store/apps/details?id=com.adwat.gocarebusiness",
     },
     {
       title: "Bussiness Book ",
       description:
         "E-commerce and services application It has social services The application contains an infinite number of ads",
-      image: "src/assets/images/bussiness-book.webp",
+      image:
+        "https://play-lh.googleusercontent.com/yOoSw89v8Rk65dU0cStsd_OqBq7jdAM4nG_9S8BjBVWdM8au1Pq8VX6SdOzdboLyKw=w240-h480-rw",
       technologies: ["Flutter", "Firebase", "Bloc"],
       source: "Freelance",
+      playStoreLink:
+        "https://play.google.com/store/apps/details?id=com.elgendy.business_book",
     },
   ];
 
@@ -199,9 +208,7 @@ function App() {
                     ? "text-gray-300 hover:text-white"
                     : "text-gray-700 hover:text-blue-600"
                 }`}
-              >
-                Skills
-              </a>
+              ></a>
               <a
                 href="#projects"
                 className={`block px-3 py-2 ${
@@ -475,14 +482,20 @@ function App() {
                       </span>
                     ))}
                   </div>
-                  <a
-                    href="#"
-                    className={`text-blue-600 hover:text-blue-700 flex items-center gap-2 ${
-                      darkMode ? "text-blue-400 hover:text-blue-300" : ""
-                    }`}
-                  >
-                    View Project <ExternalLink size={18} />
-                  </a>
+                  <div className="flex gap-4">
+                    {project.playStoreLink && (
+                      <a
+                        href={project.playStoreLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`text-green-600 hover:text-green-700 flex items-center gap-2 ${
+                          darkMode ? "text-green-400 hover:text-green-300" : ""
+                        }`}
+                      >
+                        Google Play <ExternalLink size={18} />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
